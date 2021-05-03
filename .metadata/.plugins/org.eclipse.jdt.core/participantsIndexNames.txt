@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+/home/kshitiz_j/Kshitiz/java/jsp/RiceLand/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3857886190.index
+/RiceLand/src
+/home/kshitiz_j/Kshitiz/java/jsp/RiceLand/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/418941131.index
+/RiceLand/src
+/home/kshitiz_j/Kshitiz/java/jsp/RiceLand/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2722772367.index
+/RiceLand/src

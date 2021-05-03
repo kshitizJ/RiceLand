@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<%@include file="./all_components/common.jsp"%>
+<title>Products</title>
+</head>
+<body>
+	<%@include file="./all_components/navbar.jsp"%>
+	<%@include file="./all_components/footer.jsp"%>
+</body>
+<script src="./assets/js/smooth-scroll.js"></script>
+
+<script>
+	var scroll = new SmoothScroll('a[href*="#"]');
+</script>
+</html>

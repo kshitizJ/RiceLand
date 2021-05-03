@@ -1,0 +1,16 @@
+package com.detail;
+
+import java.util.Date;
+
+public class User {
+	private int id;
+	private String fname;
+	private String lname;
+	private String email;
+	private String pass;
+	private String address;
+	private String state;
+	private String city;
+	private int zip;
+	private Date date;
+}

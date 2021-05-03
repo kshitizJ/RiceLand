@@ -1,0 +1,29 @@
+package com.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class AdminDao {
+	private Connection con;
+
+	public AdminDao(Connection con) {
+		super();
+		this.con = con;
+	}
+
+	public boolean checkadmin() {
+		boolean flag = false;
+
+		try {
+			String query = "select * from admin where email = ? and password = ?";
+			PreparedStatement ps = con.prepareStatement(query);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+
+		return flag;
+
+	}
+}

@@ -1,0 +1,13 @@
+package com.detail;
+
+import java.util.Date;
+
+public class Admin {
+	private int id;
+	private String fname;
+	private String lname;
+	private String email;
+	private String pass;
+	private Date date;
+
+}

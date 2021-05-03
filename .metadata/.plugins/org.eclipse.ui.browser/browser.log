@@ -1,0 +1,57 @@
+
+May 02, 2021 12:56:24.11 NEW SESSION
+May 02, 2021 12:56:24.12 Opening in existing browser session.
+May 02, 2021 12:59:10.970 Opening in existing browser session.
+May 02, 2021 16:31:08.337 Opening in existing browser session.
+May 02, 2021 17:04:55.825 Opening in existing browser session.
+May 02, 2021 17:13:10.768 Opening in existing browser session.
+May 02, 2021 18:28:23.838 Opening in existing browser session.
+May 02, 2021 19:47:10.87 Opening in existing browser session.
+May 02, 2021 19:52:56.762 Opening in existing browser session.
+May 02, 2021 19:54:37.527 Opening in existing browser session.
+May 02, 2021 19:56:47.347 Opening in existing browser session.
+May 02, 2021 19:57:54.206 Opening in existing browser session.
+May 02, 2021 19:59:11.610 Opening in existing browser session.
+May 02, 2021 21:14:03.576 Opening in existing browser session.
+May 02, 2021 21:19:21.956 Opening in existing browser session.
+May 02, 2021 22:16:28.53 Opening in existing browser session.
+May 02, 2021 22:16:54.729 Opening in existing browser session.
+May 02, 2021 22:17:31.196 Opening in existing browser session.
+May 02, 2021 22:51:03.743 Opening in existing browser session.
+May 02, 2021 23:17:42.716 Opening in existing browser session.
+May 02, 2021 23:19:49.968 Opening in existing browser session.
+May 02, 2021 23:32:39.836 Opening in existing browser session.
+May 02, 2021 23:54:40.536 Opening in existing browser session.
+May 02, 2021 23:56:47.19 Opening in existing browser session.
+May 03, 2021 24:07:29.988 Opening in existing browser session.
+May 03, 2021 01:12:29.494 Opening in existing browser session.
+May 03, 2021 02:36:44.232 Opening in existing browser session.
+
+May 03, 2021 17:03:45.35 NEW SESSION
+May 03, 2021 17:03:45.35 [82690:82690:0503/170345.025546:ERROR:sandbox_linux.cc(374)] InitializeSandbox() called with multiple threads in process gpu-process.
+May 03, 2021 17:10:05.841 Fontconfig error: Cannot load default config file: No such file: (null)
+May 03, 2021 17:12:29.289 [82692:82696:0503/171229.288994:ERROR:ssl_client_socket_impl.cc(924)] handshake failed; returned -1, SSL error code 1, net_error -200
+May 03, 2021 17:14:15.115 Fontconfig error: Cannot load default config file: No such file: (null)
+May 03, 2021 17:22:20.537 Opening in existing browser session.
+May 03, 2021 18:10:29.114 Fontconfig error: Cannot load default config file: No such file: (null)
+May 03, 2021 18:13:22.25 [82649:82674:0503/181322.024943:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+May 03, 2021 19:48:55.642 [82649:82674:0503/194855.642326:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+May 03, 2021 20:11:06.466 [82649:82674:0503/201106.466370:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -105
+May 03, 2021 20:27:11.604 [82649:82674:0503/202711.603328:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+May 03, 2021 20:54:14.341 [82692:82696:0503/205414.340665:ERROR:ssl_client_socket_impl.cc(924)] handshake failed; returned -1, SSL error code 1, net_error -200
+May 03, 2021 20:54:14.348 Fontconfig error: Cannot load default config file: No such file: (null)
+May 03, 2021 21:15:02.326 Fontconfig error: Cannot load default config file: No such file: (null)
+May 03, 2021 21:17:02.465 [82692:82696:0503/211702.465077:ERROR:ssl_client_socket_impl.cc(924)] handshake failed; returned -1, SSL error code 1, net_error -100
+May 03, 2021 21:17:02.723 [82692:82696:0503/211702.723246:ERROR:ssl_client_socket_impl.cc(924)] handshake failed; returned -1, SSL error code 1, net_error -100
+May 03, 2021 21:17:03.37 [82692:82696:0503/211703.036701:ERROR:ssl_client_socket_impl.cc(924)] handshake failed; returned -1, SSL error code 1, net_error -100
+May 03, 2021 21:17:05.879 [82692:82696:0503/211705.879501:ERROR:ssl_client_socket_impl.cc(924)] handshake failed; returned -1, SSL error code 1, net_error -100
+May 03, 2021 21:19:35.834 [82692:82696:0503/211935.833892:ERROR:ssl_client_socket_impl.cc(924)] handshake failed; returned -1, SSL error code 1, net_error -100
+May 03, 2021 21:19:36.237 [82692:82696:0503/211936.237641:ERROR:ssl_client_socket_impl.cc(924)] handshake failed; returned -1, SSL error code 1, net_error -100
+May 03, 2021 21:21:07.896 [82692:82696:0503/212107.896021:ERROR:ssl_client_socket_impl.cc(924)] handshake failed; returned -1, SSL error code 1, net_error -100
+May 03, 2021 21:21:08.217 [82692:82696:0503/212108.217621:ERROR:ssl_client_socket_impl.cc(924)] handshake failed; returned -1, SSL error code 1, net_error -100
+May 03, 2021 21:23:10.569 Fontconfig error: Cannot load default config file: No such file: (null)
+May 03, 2021 21:25:27.195 [82692:82696:0503/212527.194810:ERROR:ssl_client_socket_impl.cc(924)] handshake failed; returned -1, SSL error code 1, net_error -200
+May 03, 2021 21:25:27.204 Fontconfig error: Cannot load default config file: No such file: (null)
+May 03, 2021 21:25:45.773 [82692:82696:0503/212545.772810:ERROR:ssl_client_socket_impl.cc(924)] handshake failed; returned -1, SSL error code 1, net_error -200
+May 03, 2021 21:28:13.840 [82690:82690:0503/212813.839382:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 1 times!
+May 03, 2021 21:28:15.320 [82649:82674:0503/212815.320184:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106

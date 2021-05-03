@@ -1,0 +1,87 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<%@include file="./all_components/common.jsp"%>
+<title>Login</title>
+</head>
+<body>
+	<%@include file="./all_components/navbar.jsp"%>
+	<header class="account-page">
+		<div
+			class="container d-flex justify-content-center align-items-center">
+			<div class="row">
+				<div class="col-lg-6 col-12">
+					<img src="./assets/images/rice/mainn.jpg" width=100%>
+				</div>
+				<div class="col-lg-6 col-12 cent">
+					<form class="needs-validation" novalidate>
+						<div class="col-12 form-group">
+							<label for="validationCustomUsername">Email</label>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">@</span>
+								</div>
+								<input type="text" class="form-control"
+									id="validationCustomUsername" placeholder="Email ID"
+									aria-describedby="inputGroupPrepend" required>
+								<div class="invalid-feedback">Please choose a username.</div>
+							</div>
+							<small id="emailHelp" class="form-text text-muted">We'll
+								never share your email with anyone else.</small>
+						</div>
+						<div class="col-12 form-group">
+							<label for="exampleInputPassword1">Password</label> <input
+								type="password" class="form-control" id="exampleInputPassword1"
+								placeholder="Password" value="" required>
+							<div class="invalid-feedback">Please enter password.</div>
+						</div>
+						<p class="col-12">
+							Don't have an account? <a href="./register.html">Sign Up.</a>
+						</p>
+						<button type="submit" class="col-12 btn btn-primary">Log
+							In</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- End of Header -->
+	<!-- Contact Us -->
+	<section class="footer" id="contact">
+		<div class="container">
+			<h2 class="title">Contact Us</h2>
+			<div class="row d-flex justify-content-center align-items-center">
+				<div class="col-lg-4 col-12 text-center">
+					<img src="./assets/images/logo/logo.svg">
+					<p>Our Purpose Is To Sustainably Make The Pleasure And Benefits
+						Of Rice Accesible To Many</p>
+				</div>
+				<div class="col-lg-4 col-12 text-center">
+					<h3>Useful links</h3>
+					<ul>
+						<li><i class="fas fa-tags"></i> Coupons</li>
+						<li><i class="fab fa-blogger"></i> Blog Post</li>
+						<li><i class="fas fa-exchange-alt"></i> Return Policy</li>
+						<li><i class="fas fa-sign-in-alt"></i> Join Affiliate</li>
+					</ul>
+				</div>
+				<div class="col-lg-4 col-12 text-center">
+					<h3>Follow Us</h3>
+					<ul>
+						<li><i class="fab fa-facebook-square"></i> Facebook</li>
+						<li><i class="fab fa-twitter-square"></i> Twitter</li>
+						<li><i class="fab fa-instagram"></i> Instagram</li>
+						<li><i class="fab fa-youtube-square"></i> Youtube</li>
+					</ul>
+				</div>
+			</div>
+			<br>
+			<p class="copyright">
+				<i class="fas fa-copyright"></i> Copyright 2021
+			</p>
+		</div>
+	</section>
+</body>
+</html>

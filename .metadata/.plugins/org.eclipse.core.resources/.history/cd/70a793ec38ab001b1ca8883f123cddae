@@ -1,0 +1,14 @@
+package com.detail;
+
+import java.util.Date;
+
+public class Product {
+	private int pid;
+	private String name;
+	private int price;
+	private int star;
+	private String description;
+	private String status;
+	private Date date;
+
+}
