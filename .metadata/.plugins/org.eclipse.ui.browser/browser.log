@@ -203,3 +203,7 @@ May 04, 2021 20:28:19.94 [82692:82696:0504/202819.093977:ERROR:ssl_client_socket
 May 04, 2021 20:33:01.280 [82649:82674:0504/203301.280385:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
 May 04, 2021 21:10:51.211 [82649:82674:0504/211051.210644:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
 May 04, 2021 22:04:39.163 Fontconfig error: Cannot load default config file: No such file: (null)
+May 04, 2021 22:34:32.725 [82690:82690:0504/223432.725466:ERROR:shared_image_manager.cc(214)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+May 04, 2021 22:34:32.726 [82690:82690:0504/223432.725825:ERROR:shared_image_manager.cc(214)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+May 04, 2021 22:55:54.923 [82649:82674:0504/225554.922787:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+May 04, 2021 23:32:57.771 [82649:82674:0504/233257.770633:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -105

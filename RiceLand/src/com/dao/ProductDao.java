@@ -81,18 +81,19 @@ public class ProductDao {
 		return product;
 	}
 
-	public List<Product> getProductsByCategory(String featured) {
+	public List<Product> getProductsByCategory(String category) {
 		List<Product> products = new ArrayList<Product>();
 		Product product;
 		try {
 			String query = "select * from product where category = ? and status = 'completed'";
 			PreparedStatement ps = con.prepareStatement(query);
-			ps.setString(1, featured);
+			ps.setString(1, category);
 			ResultSet rs = ps.executeQuery();
-			if (rs.next()) {
+			while (rs.next()) {
 				product = new Product();
 				product.setPid(rs.getInt("product_id"));
 				product.setName(rs.getString("name"));
+				product.setPath(rs.getString("path"));
 				product.setPrice(rs.getInt("price"));
 				product.setStar(rs.getInt("star"));
 				product.setDescription(rs.getString("description"));

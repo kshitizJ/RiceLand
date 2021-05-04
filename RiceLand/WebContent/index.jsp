@@ -1,3 +1,7 @@
+<%@page import="com.db.DbConnect"%>
+<%@page import="com.detail.Product"%>
+<%@page import="java.util.List"%>
+<%@page import="com.dao.ProductDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -51,102 +55,94 @@
 		</div>
 	</section>
 	<!-- End of About Section -->
+	<%
+		ProductDao productdao = new ProductDao(DbConnect.getCon());
+	List<Product> products = productdao.getProductsByCategory("featured");
+	%>
 	<!--------------featured products-------------->
 	<section id="FeaturedProduct">
 		<div class="container">
 			<h2 class="title">Featured products</h2>
 			<div class="row d-flex justify-content-center align-items-center">
+				<%
+					int count = 0;
+				for (Product product : products) {
+				%>
 				<div class="col-lg-4 col-mg-6 col-12 text-center">
-					<img class="img-fluid d-inline-block align-top"
-						src="./assets/images/rice/basmati.jpeg"
-						style="width: 375px; height: 350px; border-radius: 5px;"> <a
-						class="stretched-link" href="productdetail.jsp">
-						<h4>Basmati Rice</h4>
-					</a>
-					<div class="rating">
-						<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-							class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-							class="fa fa-star-o"></i>
+					<div id="">
+						<img class="img-fluid"
+							src="./assets/images/rice/<%=product.getPath()%>"
+							style="width: 375px; height: 350px; border-radius: 5px;"> <a
+							class="stretched-link"
+							href="productdetail.jsp?id=<%=product.getPid()%>"></a>
+						<h4>
+							<%=product.getName()%>
+						</h4>
+						<div class="rating">
+							<%
+								for (int str = 0; str < product.getStar(); str++) {
+							%>
+							<i class="fa fa-star"></i>
+							<%
+								}
+							%>
+						</div>
+						<p>
+							Rs.<%=product.getPrice()%>/Kg
+						</p>
 					</div>
-					<p>Rs.170/Kg</p>
-
 				</div>
-				<div class="col-lg-4 col-mg-6 col-12 text-center">
-					<img class="img-fluid" src="./assets/images/rice/brown.jpeg"
-						style="width: 375px; height: 350px; border-radius: 5px;"> <a
-						class="stretched-link" href="productdetail.jsp">
-						<h4>Brown Rice</h4>
-					</a>
-					<div class="rating">
-						<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-							class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-							class="fa fa-star"></i>
-					</div>
-					<p>Rs.110/Kg</p>
-
-				</div>
-				<div class="col-lg-4 col-mg-6 col-12 text-center">
-					<img class="img-fluid" src="./assets/images/rice/matta.jpeg"
-						style="width: 375px; height: 350px; border-radius: 5px;"> <a
-						class="stretched-link" href="productdetail.jsp">
-						<h4>Matta Rice</h4>
-					</a>
-					<div class="rating">
-						<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-							class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-							class="fa fa-star-o"></i>
-					</div>
-					<p>Rs.450/Kg</p>
-				</div>
+				<%
+					count++;
+				if (count == 3) {
+					break;
+				}
+				}
+				%>
 				<a href="products.jsp" class="btn">More Products <i
 					class="fas fa-arrow-right"></i></a>
 			</div>
 		</div>
 	</section>
 	<!-------------- end of featured products -------------->
+	<%
+		products = productdao.getProductsByCategory("latest");
+	%>
 	<!-- Latest Product -->
 	<div class="container">
 		<h2 class="title">Latest products</h2>
 		<div class="row d-flex justify-content-center align-items-center">
+			<%
+				count = 0;
+			for (Product product : products) {
+			%>
 			<div class="col-lg-4 text-center">
-				<img style="width: 300px; height: 250px; border-radius: 5px;"
-					src="./assets/images/rice/wild%20rice.jpg"> <a
-					class="stretched-link" href="productdetail.jsp">
-					<h4>Wild Rice</h4>
-				</a>
+				<img class="img-fluid"
+					style="width: 300px; height: 250px; border-radius: 5px;"
+					src="./assets/images/rice/<%=product.getPath()%>"> <a
+					class="stretched-link"
+					href="productdetail.jsp?id=<%=product.getPid()%>"></a>
+				<h4><%=product.getName()%></h4>
 				<div class="rating">
-					<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-						class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-						class="fa fa-star-o"></i>
+					<%
+						for (int str = 0; str < product.getStar(); str++) {
+					%>
+					<i class="fa fa-star"></i>
+					<%
+						}
+					%>
 				</div>
-				<p>Rs.200/Kg</p>
+				<p>
+					Rs.<%=product.getStar()%>/Kg
+				</p>
 			</div>
-			<div class="col-lg-4 text-center">
-				<img style="width: 300px; height: 250px; border-radius: 5px;"
-					src="./assets/images/rice/valencia%201.jpg"> <a
-					class="stretched-link" href="productdetail.jsp">
-					<h4>Valencia Rice</h4>
-				</a>
-				<div class="rating">
-					<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-						class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-						class="fa fa-star"></i>
-				</div>
-				<p>Rs.300/Kg</p>
-			</div>
-			<div class="col-lg-4 text-center">
-				<img style="width: 300px; height: 250px; border-radius: 5px;"
-					src="./assets/images/rice/black.jpg"> <a
-					class="stretched-link" href="productdetail.jsp">
-					<h4>Black Rice</h4>
-				</a>
-				<div class="rating">
-					<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-						class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-						class="fa fa-star-o"></i>
-				</div>
-				<p>Rs.325/Kg</p>
-			</div>
+			<%
+				count++;
+			if (count == 3) {
+				break;
+			}
+			}
+			%>
 		</div>
 	</div>
 	<!-- End of Latest Product -->
