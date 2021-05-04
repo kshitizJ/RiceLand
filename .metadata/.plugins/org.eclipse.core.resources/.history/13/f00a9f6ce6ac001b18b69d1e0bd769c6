@@ -1,0 +1,8 @@
+package com.detail;
+
+public class Review {
+	private int r_id;
+	private int u_id;
+	private int p_id;
+	private String review;
+}

@@ -14,7 +14,7 @@ if (admin != null) {
 	</button>
 	<div class="collapse navbar-collapse" id="navbarNav">
 		<ul class="navbar-nav">
-			<li class="nav-item"><a class="nav-link" href="">Users</a></li>
+			<li class="nav-item"><a class="nav-link" href="showUsers.jsp">Users</a></li>
 			<li class="nav-item"><a class="nav-link" href="showProduct.jsp">Products</a></li>
 			<li class="nav-item"><a class="nav-link" href="addProduct.jsp">Add
 					Product</a></li>

@@ -18,6 +18,17 @@ public class Product {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Product(String name, String path, int price, int star, String description, String category, String status) {
+		super();
+		this.name = name;
+		this.path = path;
+		this.price = price;
+		this.star = star;
+		this.description = description;
+		this.category = category;
+		this.status = status;
+	}
+
 	public Product(int pid, String name, String path, int price, int star, String description, String category,
 			String status, Date date) {
 		super();

@@ -33,7 +33,7 @@ if (user1 == null) {
 				<div class="col-lg-4 col-mg-6 col-12 text-center">
 					<img class="img-fluid" src="./assets/images/rice/basmati.jpeg"
 						style="width: 375px; height: 350px; border-radius: 5px;"> <a
-						class="stretched-link" href="productdetail.jsp">
+						class="stretched-link" href="productdetail.jsp?id=1">
 						<h4>Basmati Rice</h4>
 					</a>
 					<div class="rating">

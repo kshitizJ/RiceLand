@@ -1,0 +1,8 @@
+package com.dao;
+
+import java.sql.Connection;
+
+public class ReviewDao {
+	private Connection con;
+
+}

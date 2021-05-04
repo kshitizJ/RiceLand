@@ -24,13 +24,37 @@ if (admin1 != null) {
 	List<Product> products = productdao.getProducts();
 	SimpleDateFormat ft = new SimpleDateFormat("dd-MM-yyyy");
 	%>
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-12 my-4">
 				<h1 class="text-center">Products</h1>
 			</div>
 			<div class="col-12">
-				<table class="table table-bordered">
+				<%
+					String msg = (String) session.getAttribute("msg");
+				if ("Failed to delete a product, please try again...".equals(msg)) {
+				%>
+				<div class="alert alert-danger" role="alert">Failed to add the
+					product, please try again...</div>
+				<%
+					session.removeAttribute("msg");
+				} else if ("Product deleted successfully...".equals(msg)) {
+				%>
+				<div class="alert alert-success" role="alert">Successfully
+					added the product...</div>
+				<%
+					session.removeAttribute("msg");
+				}
+				%>
+			</div>
+			<div class="col-12 mb-3">
+				<h4 class="text-right text-success">
+					Total Products:
+					<%=products.size()%>
+				</h4>
+			</div>
+			<div class="col-12">
+				<table class="table table-responsive table-bordered">
 					<thead>
 						<tr>
 							<th>ID</th>
@@ -39,6 +63,7 @@ if (admin1 != null) {
 							<th>Star</th>
 							<th>Description</th>
 							<th>Category</th>
+							<th>Status</th>
 							<th>Date Added</th>
 							<th>Edit</th>
 							<th>Delete</th>
@@ -51,13 +76,16 @@ if (admin1 != null) {
 						<tr>
 							<th><%=p.getPid()%></th>
 							<th><%=p.getName()%></th>
-							<th><%=p.getPrice()%></th>
+							<th><%=p.getPrice()%> / kg</th>
 							<th><%=p.getStar()%></th>
 							<th><%=p.getDescription()%></th>
 							<th><%=p.getCategory()%></th>
+							<th><%=p.getStatus()%></th>
 							<th><%=ft.format(p.getDate())%></th>
-							<th><a class="btn btn-warning" href=""></a></th>
-							<th><a class="btn btn-danger" href=""></a></th>
+							<th><a class="btn btn-warning"
+								href="editProduct.jsp?id=<%=p.getPid()%>">Edit</a></th>
+							<th><a class="btn btn-danger"
+								href="../DeleteProduct?id=<%=p.getPid()%>">Delete</a></th>
 						</tr>
 						<%
 							}

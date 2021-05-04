@@ -1,0 +1,24 @@
+package com.detail;
+
+public class Review {
+	private int r_id;
+	private int u_id;
+	private int p_id;
+	private String review;
+	private int stars;
+
+	public Review() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Review(int r_id, int u_id, int p_id, String review, int stars) {
+		super();
+		this.r_id = r_id;
+		this.u_id = u_id;
+		this.p_id = p_id;
+		this.review = review;
+		this.stars = stars;
+	}
+
+}

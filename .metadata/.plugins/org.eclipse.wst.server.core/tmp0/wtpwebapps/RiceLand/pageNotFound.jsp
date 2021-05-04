@@ -65,13 +65,7 @@ body {
 						<h1>Oops!</h1>
 						<h2>404 Not Found</h2>
 						<div class="error-details">
-							<%
-								if ("User registration fail, please try again...".equals(error)) {
-							%>
 							<%=error%>
-							<%
-								}
-							%>
 						</div>
 						<div class="error-actions">
 							<a href="index.jsp" class="btn btn-lg"><span

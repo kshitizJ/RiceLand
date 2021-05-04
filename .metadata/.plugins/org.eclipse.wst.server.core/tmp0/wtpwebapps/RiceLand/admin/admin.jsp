@@ -14,10 +14,22 @@ if (admin1 != null) {
 </head>
 <body>
 	<%@include file="adminNav.jsp"%>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 my-4">
+				<h1 class="text-center text-success">
+					<b>Hello <%=admin.getFname() + " " + admin.getLname()%></b>
+				</h1>
+			</div>
+			<div class="col-12">
+				<h3 class="text-center text-success">Welcome To Admin Panel</h3>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
 <%
-}else{
-	response.sendRedirect("../login.jsp");
+	} else {
+response.sendRedirect("../login.jsp");
 }
 %>

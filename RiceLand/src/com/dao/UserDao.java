@@ -3,6 +3,8 @@ package com.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.detail.User;
 
@@ -41,7 +43,7 @@ public class UserDao {
 
 	public User checkDetail(String email, String pass) {
 		User user = null;
-		
+
 		try {
 			String query = "select * from user where email = ? and password = ? ;";
 			PreparedStatement ps = con.prepareStatement(query);
@@ -78,7 +80,7 @@ public class UserDao {
 			ps.setInt(8, user.getZip());
 			ps.setInt(9, user.getId());
 			int i = ps.executeUpdate();
-			//System.out.println(i);
+			// System.out.println(i);
 			if (i == 1)
 				flag = true;
 		} catch (Exception e) {
@@ -88,6 +90,73 @@ public class UserDao {
 		}
 
 		return flag;
+	}
+
+	public List<User> getUsers() {
+		List<User> users = new ArrayList<User>();
+		User user;
+		try {
+			String query = "select * from user;";
+			PreparedStatement ps = con.prepareStatement(query);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				user = new User();
+				user.setId(rs.getInt("user_id"));
+				user.setFname(rs.getString("fname"));
+				user.setLname(rs.getString("lname"));
+				user.setEmail(rs.getString("email"));
+				user.setNumber(rs.getString("mobile_no"));
+				user.setAddress(rs.getString("address"));
+				user.setState(rs.getString("state"));
+				user.setCity(rs.getString("city"));
+				user.setZip(rs.getInt("zip"));
+				user.setDate(rs.getDate("date_registered"));
+				users.add(user);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+
+		return users;
+	}
+
+	public boolean deleteUser(int id) {
+		boolean flag = false;
+		try {
+			String query = "delete from user where user_id = ?";
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setInt(1, id);
+			int i = ps.executeUpdate();
+			if (i == 1)
+				flag = true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+
+		return flag;
+	}
+
+	public String getUserName(int id) {
+		String name = "";
+		try {
+			String query = "select * from user where user_id = ?";
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				name = rs.getString("fname") + " " + rs.getString("lname");
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+
+		return name;
 	}
 
 }
