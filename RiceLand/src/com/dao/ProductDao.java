@@ -107,7 +107,7 @@ public class ProductDao {
 		return products;
 	}
 
-	public boolean updateProduct(String name, int price, String description, String category, String status) {
+	public boolean updateProduct(int id, String name, int price, String description, String category, String status) {
 		boolean flag = false;
 		try {
 			String query = "update product set name = ?, price = ?, description = ?, category = ?, status = ? where product_id = ?";
@@ -117,6 +117,7 @@ public class ProductDao {
 			ps.setString(3, description);
 			ps.setString(4, category);
 			ps.setString(5, status);
+			ps.setInt(6, id);
 			int i = ps.executeUpdate();
 			if (i == 1) {
 				flag = true;

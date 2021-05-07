@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.sun.tools.sjavac.comp.dependencies.PublicApiCollector"/>
+    <fullyQualifiedTypeName name="com.sun.crypto.provider.ChaCha20Cipher.ChaCha20Only"/>
+    <fullyQualifiedTypeName name="org.apache.catalina.LifecycleListener"/>
+    <fullyQualifiedTypeName name="com.sun.tools.javac.util.List"/>
+    <fullyQualifiedTypeName name="com.detail.User"/>
+    <fullyQualifiedTypeName name="org.apache.catalina.startup.RealmRuleSet"/>
+    <fullyQualifiedTypeName name="com.dao.UserDao"/>
+    <fullyQualifiedTypeName name="com.detail.Review"/>
+    <fullyQualifiedTypeName name="com.sun.tools.classfile.ConstantPool.CPInfo"/>
+    <fullyQualifiedTypeName name="java.lang.Iterable"/>
+    <fullyQualifiedTypeName name="com.dao.ReviewDao"/>
+    <fullyQualifiedTypeName name="java.lang.InternalError"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.Session"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.ls.LSException"/>
+    <fullyQualifiedTypeName name="org.eclipse.jdt.internal.compiler.ast.QualifiedAllocationExpression"/>
+    <fullyQualifiedTypeName name="org.apache.tomcat.jni.OS"/>
+    <fullyQualifiedTypeName name="sun.util.locale.provider.FallbackLocaleProviderAdapter"/>
+    <fullyQualifiedTypeName name="com.dao.CartDao"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="jdk.internal.org.objectweb.asm.tree.IntInsnNode"/>
+    <fullyQualifiedTypeName name="com.detail.Cart"/>
+    <fullyQualifiedTypeName name="com.detail.Product"/>
+    <fullyQualifiedTypeName name="com.dao.ProductDao"/>
+    <fullyQualifiedTypeName name="jdk.internal.agent.resources.agent"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="com.detail.Order"/>
+    <fullyQualifiedTypeName name="jdk.internal.module.ModulePatcher.PatchedModuleReader"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="com.dao.OrderDao"/>
+    <fullyQualifiedTypeName name="com.db.DbConnect"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+</qualifiedTypeNameHistroy>

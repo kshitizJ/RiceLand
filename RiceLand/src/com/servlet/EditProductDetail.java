@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.dao.CartDao;
 import com.dao.ProductDao;
 import com.db.DbConnect;
 
@@ -22,7 +23,7 @@ public class EditProductDetail extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
@@ -33,13 +34,21 @@ public class EditProductDetail extends HttpServlet {
 		String category = request.getParameter("category");
 		String status = request.getParameter("status");
 		ProductDao productdao = new ProductDao(DbConnect.getCon());
-		boolean flag = productdao.updateProduct(name, price, description, category, status);
+		boolean flag = productdao.updateProduct(id, name, price, description, category, status);
 		if (flag) {
-			session.setAttribute("msg", "Successfully added the product...");
-			response.sendRedirect("admin/editProduct.jsp?id=" + id);
+			if (status == "pending") {
+				CartDao cartDao = new CartDao(DbConnect.getCon());
+				boolean flag2 = cartDao.deleteProductFromCartForAll(id);
+				if (flag2) {
+
+				}
+			}
+
+			session.setAttribute("msg", "Successfully edited the product...");
+			response.sendRedirect("admin/showProduct.jsp");
 		} else {
-			session.setAttribute("msg", "Failed to add the product, please try again...");
-			response.sendRedirect("admin/editProduct.jsp?id=" + id);
+			session.setAttribute("msg", "Failed to edit the product, please try again...");
+			response.sendRedirect("admin/showProduct.jsp");
 		}
 
 	}

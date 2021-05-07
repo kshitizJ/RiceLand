@@ -1,0 +1,112 @@
+package com.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.detail.Cart;
+
+public class CartDao {
+	private Connection con;
+
+	public CartDao(Connection con) {
+		super();
+		this.con = con;
+	}
+
+	public boolean insertProductInCart(int uid, int pid, String pname, int quant, int price, int subtotal) {
+		boolean flag = false;
+		try {
+			String query = "insert into cart(user_id, product_id, productName, quantity, price, subtotal) values (?,?,?,?,?,?) ;";
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setInt(1, uid);
+			ps.setInt(2, pid);
+			ps.setString(3, pname);
+			ps.setInt(4, quant);
+			ps.setInt(5, price);
+			ps.setInt(6, subtotal);
+			int i = ps.executeUpdate();
+			if (i == 1)
+				flag = true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+		return flag;
+	}
+
+	public List<Cart> getUserCart(int uid) {
+		List<Cart> carts = new ArrayList<Cart>();
+		Cart cart;
+		try {
+			String query = "select * from cart where user_id = ? ;";
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setInt(1, uid);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				cart = new Cart(rs.getInt("cart_id"), rs.getInt("user_id"), rs.getInt("product_id"),
+						rs.getString("productName"), rs.getInt("price"), rs.getInt("quantity"), rs.getInt("subtotal"));
+				carts.add(cart);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+
+		return carts;
+	}
+
+	public boolean updateProductQuantity() {
+		boolean flag = false;
+		try {
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+
+		return flag;
+	}
+
+	public boolean deleteProductFromCart(int uid, int pid) {
+		boolean flag = false;
+		try {
+			String query = "delete from cart where user_id = ? and product_id = ?";
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setInt(1, uid);
+			ps.setInt(2, pid);
+			int i = ps.executeUpdate();
+			if (i == 1)
+				flag = true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+		return flag;
+	}
+
+	public boolean deleteProductFromCartForAll(int id) {
+		boolean flag = false;
+		try {
+			String query = "delete from cart where product_id = ?";
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setInt(1, id);
+			int i = ps.executeUpdate();
+			if (i == 1)
+				flag = true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+
+		return flag;
+	}
+
+}

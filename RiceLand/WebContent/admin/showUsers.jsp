@@ -65,6 +65,7 @@ if (admin1 != null) {
 							<th>City</th>
 							<th>Zip</th>
 							<th>Date Added</th>
+							<th>Orders</th>
 							<th>Delete</th>
 						</tr>
 					</thead>
@@ -82,6 +83,8 @@ if (admin1 != null) {
 							<th><%=user.getCity()%></th>
 							<th><%=user.getZip()%></th>
 							<th><%=ft.format(user.getDate())%></th>
+							<th><a class="btn btn-success"
+								href="showOrders.jsp?id=<%=user.getId()%>">Orders</a></th>
 							<th><a class="btn btn-danger"
 								href="../DeleteUser?id=<%=user.getId()%>">Delete</a></th>
 						</tr>

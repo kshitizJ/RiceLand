@@ -1,0 +1,13 @@
+package com.dao;
+
+import java.sql.Connection;
+
+public class CartDao {
+	private Connection con;
+
+	public CartDao(Connection con) {
+		super();
+		this.con = con;
+	}
+
+}

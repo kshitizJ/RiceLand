@@ -42,7 +42,8 @@ if (user1 != null) {
 					</p>
 					<h1><%=product.getName()%></h1>
 					<h4>
-						Rs.<%=product.getPrice()%>/kg
+						<i class="fas fa-rupee-sign"></i>
+						<%=product.getPrice()%>/kg
 					</h4>
 					<div class="rating">
 						<%
@@ -53,7 +54,9 @@ if (user1 != null) {
 							}
 						%>
 					</div>
-					<a href="" class="btn">Add to cart</a>
+					<a
+						href="AddToCart?pid=<%=product.getPid()%>&uid=<%=user.getId()%>&pname=<%=product.getName()%>&price=<%=product.getPrice()%>"
+						class="btn">Add to cart</a>
 					<h3>
 						<i class="fa fa-indent"></i> Product Details
 					</h3>

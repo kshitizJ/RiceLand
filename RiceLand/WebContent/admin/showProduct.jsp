@@ -44,6 +44,17 @@ if (admin1 != null) {
 					added the product...</div>
 				<%
 					session.removeAttribute("msg");
+				} else if ("Successfully edited the product...".equals(msg)) {
+				%>
+				<div class="alert alert-success" role="alert">Successfully
+					edited the product...</div>
+				<%
+					session.removeAttribute("msg");
+				} else if ("Failed to edit the product, please try again...".equals(msg)) {
+				%>
+				<div class="alert alert-danger" role="alert">Failed to edit the product, please try again...</div>
+				<%
+					session.removeAttribute("msg");
 				}
 				%>
 			</div>

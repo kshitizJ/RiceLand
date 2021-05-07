@@ -1,0 +1,13 @@
+package com.dao;
+
+import java.sql.Connection;
+
+public class OrderDao {
+	private Connection con;
+
+	public OrderDao(Connection con) {
+		super();
+		this.con = con;
+	}
+
+}

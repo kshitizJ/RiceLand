@@ -1,0 +1,53 @@
+package com.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.detail.Order;
+
+public class OrderDao {
+	private Connection con;
+
+	public OrderDao(Connection con) {
+		super();
+		this.con = con;
+	}
+
+	public boolean insertOrder(int uid, String name, int prc, int quant, int stotal, String st) {
+		boolean flag = false;
+		try {
+			String query = "insert into order(user_id, product_name, price, quantity, subtotal, status) values(?,?,?,?,?,?) ;";
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setInt(1, uid);
+			ps.setString(2, name);
+			ps.setInt(3, prc);
+			ps.setInt(4, quant);
+			ps.setInt(5, stotal);
+			ps.setString(6, st);
+			int i = ps.executeUpdate();
+			if (i == 1) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+		return flag;
+	}
+
+	public List<Order> getOrder(int uid) {
+		List<Order> orders = new ArrayList<Order>();
+		try {
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+		return orders;
+	}
+
+}

@@ -1,0 +1,32 @@
+package com.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class CartDao {
+	private Connection con;
+
+	public CartDao(Connection con) {
+		super();
+		this.con = con;
+	}
+
+	public boolean deleteProductFromCart(int id) {
+		boolean flag = false;
+		try {
+			String query = "delete from cart where product_id = ?";
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setInt(1, id);
+			int i = ps.executeUpdate();
+			if (i == 1)
+				flag = true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+
+		return flag;
+	}
+
+}

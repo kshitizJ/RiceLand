@@ -1,0 +1,31 @@
+<%@page import="java.util.List"%>
+<%@page import="com.dao.OrderDao"%>
+<%@page import="com.detail.Order"%>
+<%@page import="com.db.DbConnect"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%
+	response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+Admin admin1 = (Admin) session.getAttribute("admin");
+if (admin1 != null) {
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<%@include file="common.jsp"%>
+<title>Orders</title>
+</head>
+<body>
+	<%@include file="adminNav.jsp"%>
+	<%
+		OrderDao orderDao = new OrderDao(DbConnect.getCon());
+	List<Order> orders = orderDao.getOrder(Integer.parseInt(request.getParameter("id")));
+	%>
+	<div class="container-fluid"></div>
+</body>
+</html>
+<%
+	} else {
+response.sendRedirect("../login.jsp");
+}
+%>

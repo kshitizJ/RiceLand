@@ -88,7 +88,7 @@
 							%>
 						</div>
 						<p>
-							Rs.<%=product.getPrice()%>/Kg
+							<i class="fas fa-rupee-sign"></i> <%=product.getPrice()%>/Kg
 						</p>
 					</div>
 				</div>
@@ -133,7 +133,7 @@
 					%>
 				</div>
 				<p>
-					Rs.<%=product.getStar()%>/Kg
+					<i class="fas fa-rupee-sign"></i> <%=product.getStar()%>/Kg
 				</p>
 			</div>
 			<%

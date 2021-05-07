@@ -61,7 +61,8 @@ if (user1 == null) {
 							%>
 						</div>
 						<p>
-							Rs.<%=product.getPrice()%>/Kg
+							<i class="fas fa-rupee-sign"></i>
+							<%=product.getPrice()%>/Kg
 						</p>
 					</div>
 				</div>
@@ -101,7 +102,8 @@ if (user1 == null) {
 						%>
 					</div>
 					<p>
-						Rs.<%=product.getStar()%>/Kg
+						<i class="fas fa-rupee-sign"></i>
+						<%=product.getStar()%>/Kg
 					</p>
 				</div>
 				<%
