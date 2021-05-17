@@ -245,3 +245,21 @@ May 06, 2021 12:14:16.800 [35690:35690:0506/121416.800357:ERROR:CONSOLE(0)] "Acc
 May 06, 2021 12:14:26.980 [35690:35690:0506/121426.980134:ERROR:CONSOLE(0)] "Access to XMLHttpRequest at 'https://www.google.com/cloudprint/printer?xsrf=&hl=en-GB&printerid=__google__docs&use_cdd=true&printer_connection_status=true' from origin 'chrome://print' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.", source: chrome://print/ (0)
 May 06, 2021 12:21:54.574 [35729:35729:0506/122154.573776:ERROR:shared_image_manager.cc(214)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
 May 06, 2021 12:21:54.574 [35729:35729:0506/122154.574067:ERROR:shared_image_manager.cc(214)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+
+May 09, 2021 02:16:26.994 NEW SESSION
+May 09, 2021 02:16:26.994 Opening in existing browser session.
+
+May 10, 2021 21:35:30.236 NEW SESSION
+May 10, 2021 21:35:30.236 Opening in existing browser session.
+
+May 11, 2021 20:06:53.302 NEW SESSION
+May 11, 2021 20:06:53.302 Opening in existing browser session.
+
+May 12, 2021 10:14:31.943 NEW SESSION
+May 12, 2021 10:14:31.943 Opening in existing browser session.
+
+May 14, 2021 18:54:38.834 NEW SESSION
+May 14, 2021 18:54:38.835 Opening in existing browser session.
+
+May 17, 2021 18:56:34.492 NEW SESSION
+May 17, 2021 18:56:34.492 Opening in existing browser session.

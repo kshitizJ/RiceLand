@@ -26,7 +26,7 @@ if (user1 == null) {
 						String success = (String) session.getAttribute("success");
 					if ("Your details have been changed successfully...".equals(success)) {
 					%>
-					<div class="alert alert-danger" role="alert">Your details
+					<div class="alert alert-success" role="alert">Your details
 						have been changed successfully...</div>
 					<%
 						session.removeAttribute("success");

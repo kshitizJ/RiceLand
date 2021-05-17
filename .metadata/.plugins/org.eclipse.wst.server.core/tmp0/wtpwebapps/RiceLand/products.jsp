@@ -26,18 +26,9 @@ if (user1 == null) {
 	<section id="FeatureProduct">
 		<div class="container">
 			<div class="row d-flex justify-content-center align-items-center">
-				<div class="col-md-6 col-12">
+				<div class="col-12">
 					<h2 class="title">Featured products</h2>
 				</div>
-				<div class="col-md-6 col-12 form-group">
-					<select class="form-control" id="exampleFormControlSelect1">
-						<option>Default Sorting</option>
-						<option>Sort by price</option>
-						<option>Sort by rating</option>
-					</select>
-				</div>
-			</div>
-			<div class="row d-flex justify-content-center align-items-center">
 				<%
 					for (Product product : products) {
 				%>

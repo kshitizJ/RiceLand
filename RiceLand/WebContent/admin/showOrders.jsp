@@ -33,7 +33,8 @@ if (admin1 != null) {
 					String msg = (String) session.getAttribute("msg");
 				if ("Order Completed..".equals(msg)) {
 				%>
-				<div class="alert alert-success" role="alert">Order Completed.</div>
+				<div class="alert alert-success" role="alert">Order
+					Completed..</div>
 				<%
 					session.removeAttribute("msg");
 				} else if ("Something went wrong..".equals(msg)) {
@@ -62,15 +63,13 @@ if (admin1 != null) {
 							Product product;
 						ProductDao productdao = new ProductDao(DbConnect.getCon());
 						for (Order order : orders) {
-							product = new Product();
-							product = productdao.getProduct(order.getPid());
 							if (order.getSts().equals("pending")) {
 						%>
 						<tr>
 							<td>
 								<div class="cart-info d-flex align-items-center">
 									<div>
-										<p><%=product.getName()%></p>
+										<p><%=order.getName()%></p>
 									</div>
 								</div>
 							</td>
@@ -79,7 +78,8 @@ if (admin1 != null) {
 								<p class="item-amount"><%=order.getQuant()%></p>
 							</td>
 							<td><i class="fas fa-rupee-sign"></i> <%=order.getStotal()%>/-</td>
-							<td><a href="../CompletedOrder?id=<%=order.getOid()%>"
+							<td><a
+								href="../CompletedOrder?id=<%=order.getOid()%>&uid=<%=request.getParameter("id")%>"
 								class="btn btn-success">Completed</a></td>
 						</tr>
 						<%

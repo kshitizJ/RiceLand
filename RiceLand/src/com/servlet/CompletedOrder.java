@@ -26,16 +26,17 @@ public class CompletedOrder extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
+		int uid = Integer.parseInt(request.getParameter("uid"));
 		int id = Integer.parseInt(request.getParameter("id"));
 		OrderDao orderdao = new OrderDao(DbConnect.getCon());
 		boolean flag = orderdao.completedOrder(id, "completed");
 		HttpSession session = request.getSession();
 		if (flag) {
 			session.setAttribute("msg", "Order Completed..");
-			response.sendRedirect("admin/showOrders.jsp?id=" + id);
+			response.sendRedirect("admin/showOrders.jsp?id=" + uid);
 		} else {
 			session.setAttribute("msg", "Something went wrong..");
-			response.sendRedirect("admin/showOrders.jsp?id=" + id);
+			response.sendRedirect("admin/showOrders.jsp?id=" + uid);
 		}
 
 	}

@@ -1,8 +1,10 @@
+<%@page import="com.detail.Admin"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
 	User user1 = (User) session.getAttribute("user");
-if (user1 == null) {
+Admin admin = (Admin) session.getAttribute("admin");
+if (user1 == null && admin == null) {
 %>
 <!DOCTYPE html>
 <html>
