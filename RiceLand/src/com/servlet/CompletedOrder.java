@@ -26,9 +26,15 @@ public class CompletedOrder extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
+		
+		// Integer.parseInt() will convert string number "1" to int number 1.
 		int uid = Integer.parseInt(request.getParameter("uid"));
 		int id = Integer.parseInt(request.getParameter("id"));
+		
+		// OrderDao class contains the following query to complete the user order.
 		OrderDao orderdao = new OrderDao(DbConnect.getCon());
+		
+		// completedOrder(int, String) is to complete the order of the following user.
 		boolean flag = orderdao.completedOrder(id, "completed");
 		HttpSession session = request.getSession();
 		if (flag) {

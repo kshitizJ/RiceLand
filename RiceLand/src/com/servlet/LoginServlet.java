@@ -64,24 +64,57 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
+		// Session gets started.
 		HttpSession session = request.getSession(true);
+
+		// We will get 2 parameter from the request.
 		String email = request.getParameter("email");
 		String pass = hashPassword(request.getParameter("pass"));
+
+		// First it will check if the user is admin or not. Mysql query is written in AdminDao class.
+		// DbConnect.getCon() is passed as a parameter to AdminDao class to connect our back-end with database. 
 		AdminDao admindao = new AdminDao(DbConnect.getCon());
+		
+		// Admin class contains the details of the admin.
 		Admin admin = admindao.checkadmin(email, pass);
 		if (admin != null) {
+			// setMaxInactiveInterval sets the session timing for the user.
 			session.setMaxInactiveInterval(60 * 60);
+			// after 60 mins the session gets expired automatically.
+
+			// To pass attribute from one page to another we use setAttribute method.
 			session.setAttribute("admin", admin);
+
+			// We are sending our response to admin panel using sendRedirect method.
 			response.sendRedirect("./admin/admin.jsp");
 		} else {
+			// If credentials does not match with admin credentials then it will check for the customer.
+			
+			// UserDao class contains the query to check if user credentials are right or wrong.
+			// DbConnect.getCon() is passed as a parameter to UserDao class to connect our back-end with database. 
 			UserDao userdao = new UserDao(DbConnect.getCon());
+			
+			// User class contains the details of the user. checkDetail(email, pass) returns the instance of the user.
 			User user = userdao.checkDetail(email, pass);
+			
+			// if we get the customer than it will login or it will show an error in login page.
 			if (user != null) {
+				
+				// setMaxInactiveInterval sets the session timing for the user.
 				session.setMaxInactiveInterval(60 * 60);
+				// after 60 mins the session gets expired automatically.
+				
+				// To pass attribute from one page to another we use setAttribute method.
 				session.setAttribute("user", user);
+				
+				// redirect to index.jsp.
 				response.sendRedirect("index.jsp");
 			} else {
+				
+				// If no user and admin found then error message is displayed.
 				session.setAttribute("error", "Please login with right credentials...");
+				
+				// redirect to login.jsp
 				response.sendRedirect("login.jsp");
 			}
 		}

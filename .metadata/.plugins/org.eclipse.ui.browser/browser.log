@@ -263,3 +263,18 @@ May 14, 2021 18:54:38.835 Opening in existing browser session.
 
 May 17, 2021 18:56:34.492 NEW SESSION
 May 17, 2021 18:56:34.492 Opening in existing browser session.
+
+May 18, 2021 09:22:09.898 NEW SESSION
+May 18, 2021 09:22:09.898 Opening in existing browser session.
+May 18, 2021 09:22:30.612 Opening in existing browser session.
+May 18, 2021 09:41:29.611 Opening in existing browser session.
+
+May 24, 2021 12:57:20.903 NEW SESSION
+May 24, 2021 12:57:20.903 [5413:5413:0524/125720.902327:ERROR:sandbox_linux.cc(374)] InitializeSandbox() called with multiple threads in process gpu-process.
+May 24, 2021 13:13:52.803 [6947:6947:0524/131352.802878:ERROR:sandbox_linux.cc(374)] InitializeSandbox() called with multiple threads in process gpu-process.
+May 24, 2021 14:27:35.604 [6907:6907:0524/142735.603548:ERROR:CONSOLE(0)] "Access to XMLHttpRequest at 'https://www.google.com/cloudprint/invites?xsrf=&hl=en-GB&client=chrome' from origin 'chrome://print' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.", source: chrome://print/ (0)
+May 24, 2021 14:27:35.612 [6907:6907:0524/142735.612093:ERROR:CONSOLE(0)] "Access to XMLHttpRequest at 'https://www.google.com/cloudprint/search?xsrf=&hl=en-GB&connection_status=ALL&client=chrome&use_cdd=true' from origin 'chrome://print' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.", source: chrome://print/ (0)
+May 24, 2021 14:27:35.614 [6907:6907:0524/142735.613772:ERROR:CONSOLE(0)] "Access to XMLHttpRequest at 'https://www.google.com/cloudprint/search?xsrf=&hl=en-GB&connection_status=ALL&client=chrome&use_cdd=true&q=%255Erecent' from origin 'chrome://print' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.", source: chrome://print/ (0)
+May 24, 2021 14:37:12.349 [6947:6947:0524/143712.349039:ERROR:shared_image_manager.cc(214)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+May 24, 2021 14:37:12.350 [6947:6947:0524/143712.349597:ERROR:shared_image_manager.cc(214)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+May 24, 2021 22:24:56.155 Opening in existing browser session.

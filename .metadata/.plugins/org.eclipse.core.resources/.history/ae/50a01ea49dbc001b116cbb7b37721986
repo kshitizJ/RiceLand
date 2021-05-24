@@ -1,0 +1,26 @@
+package com.db;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class DbConnect {
+	private static Connection connection;
+
+	// A Connection is the session between java application and database. The
+	// Connection interface is a factory of Statement, PreparedStatement, and
+	// DatabaseMetaData i.e. object of Connection can be used to get the object of
+	// Statement and DatabaseMetaData.
+	
+	public static Connection getCon() {
+		if (connection == null) {
+			try {
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/RiceLand", "root", "Kshitiz123@");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return connection;
+	}
+}

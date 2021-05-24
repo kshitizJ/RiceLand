@@ -100,20 +100,20 @@ if (admin1 != null) {
 							<%
 								if ("pending".equals(product.getStatus())) {
 							%>
-							<option value="pending" selected>Pending</option>
+							<option value="pending" selected>Out Of Stock</option>
 							<%
 								} else {
 							%>
-							<option value="pending">Pending</option>
+							<option value="pending">Out Of Stock</option>
 							<%
 								}
 							if ("completed".equals(product.getStatus())) {
 							%>
-							<option value="completed" selected>Completed</option>
+							<option value="completed" selected>In Stock</option>
 							<%
 								} else {
 							%>
-							<option value="completed">Completed</option>
+							<option value="completed">In Stock</option>
 							<%
 								}
 							%>

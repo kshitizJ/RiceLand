@@ -31,7 +31,7 @@ if (user1 == null && admin == null) {
 					%>
 				</div>
 				<div class="col-lg-6 col-12">
-					<img src="./assets/images/rice/mainn.jpg" width=100%>
+					<img src="./assets/images/rice/mainn-rice.jpg" width=100%>
 				</div>
 				<div class="col-lg-6 col-12 cent">
 					<form class="needs-validation" novalidate method="post"

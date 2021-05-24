@@ -89,8 +89,8 @@ if (admin1 != null) {
 						<label for="status">Status</label> <select class="custom-select"
 							id="status" name="status" required>
 							<option selected>Choose..</option>
-							<option value="pending">Pending</option>
-							<option value="completed">Completed</option>
+							<option value="pending">Out Of Stock</option>
+							<option value="completed">In Stock</option>
 						</select>
 					</div>
 					<div class="col-md-6 mb-3">

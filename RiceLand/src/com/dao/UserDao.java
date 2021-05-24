@@ -11,11 +11,31 @@ import com.detail.User;
 public class UserDao {
 	Connection con;
 
+	// A Connection is the session between java application and database. The
+	// Connection interface is a factory of Statement, PreparedStatement i.e. object
+	// of Connection can be used to get the object of Statement.
+
 	public UserDao(Connection con) {
 		super();
 		this.con = con;
 	}
 
+	// PreparedStatement
+	// The PreparedStatement interface is a subinterface of Statement. It is used to
+	// execute parameterized query.
+
+	// As you can see, we are passing parameter (?) for the values. Its value will
+	// be set by calling the setter methods of PreparedStatement.
+
+	// Improves performance: The performance of the application will be faster if
+	// you use PreparedStatement interface because query is compiled only once.
+
+	// ResultSet
+	// The object of ResultSet maintains a cursor pointing to a row of a table.
+	// Initially, cursor points to before the first row.
+
+	// adduser(user) takes the parameter of Type User which is the class of user
+	// details in com.detail package.
 	public boolean adduser(User user) {
 		boolean flag = false;
 		try {
@@ -41,6 +61,8 @@ public class UserDao {
 		return flag;
 	}
 
+	// checkDetail(String email, String pass) function checks if the user
+	// credentials are right or wrong while logging in.
 	public User checkDetail(String email, String pass) {
 		User user = null;
 
@@ -50,6 +72,8 @@ public class UserDao {
 			ps.setString(1, email);
 			ps.setString(2, pass);
 			ResultSet rs = ps.executeQuery();
+			// next() is used to move the cursor to the one row next from the current
+			// position.
 			if (rs.next()) {
 				user = new User(rs.getInt("user_id"), rs.getString("fname"), rs.getString("lname"),
 						rs.getString("email"), rs.getString("password"), rs.getString("mobile_no"),
@@ -65,6 +89,7 @@ public class UserDao {
 		return user;
 	}
 
+	// editDetails(User user) is used to update details of the user.
 	public boolean editDetails(User user) {
 		boolean flag = false;
 		try {
@@ -92,6 +117,8 @@ public class UserDao {
 		return flag;
 	}
 
+	// getUsers() will return the list of all the registered users from the
+	// database.
 	public List<User> getUsers() {
 		List<User> users = new ArrayList<User>();
 		User user;
@@ -122,6 +149,7 @@ public class UserDao {
 		return users;
 	}
 
+	// deleteUser(int id) functions delete the user which id is 'id'
 	public boolean deleteUser(int id) {
 		boolean flag = false;
 		try {
@@ -140,6 +168,7 @@ public class UserDao {
 		return flag;
 	}
 
+	// getUserName(int id) function will return the user's firstname and lastname.
 	public String getUserName(int id) {
 		String name = "";
 		try {

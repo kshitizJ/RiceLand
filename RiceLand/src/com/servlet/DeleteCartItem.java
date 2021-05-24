@@ -26,9 +26,17 @@ public class DeleteCartItem extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
+		// Integer.parseInt() will convert string number "1" to int number 1.
 		int uid = Integer.parseInt(request.getParameter("uid"));
 		int pid = Integer.parseInt(request.getParameter("pid"));
+
+		// CartDao class contains the cart related query for the cart functionality.
+		// DbConnect.getCon() is passed as a parameter to CartDao class to connect our
+		// back-end with database.
 		CartDao cartdao = new CartDao(DbConnect.getCon());
+
+		// deleteProductFromCart(uid, pid) deletes product from the cart once user
+		// clicks on remove.
 		boolean flag = cartdao.deleteProductFromCart(uid, pid);
 		HttpSession session = request.getSession();
 		if (flag) {

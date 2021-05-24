@@ -1,0 +1,123 @@
+package com.servlet;
+
+import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.dao.AdminDao;
+import com.dao.UserDao;
+import com.db.DbConnect;
+import com.detail.Admin;
+import com.detail.User;
+
+/**
+ * Servlet implementation class LoginServlet
+ */
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	final private static char[] hexArray = "0123456789ABCDEF".toCharArray();
+
+	private String bytesToHex(byte[] bytes) {
+		char[] hexChars = new char[bytes.length * 2];
+		int v;
+		for (int j = 0; j < bytes.length; j++) {
+			v = bytes[j] & 0xFF;
+			hexChars[j * 2] = hexArray[v >>> 4];
+			hexChars[j * 2 + 1] = hexArray[v & 0x0F];
+		}
+		return new String(hexChars);
+	}
+
+	// Change this to something else.
+	private static String SALT = "123456";
+
+	// A password hashing method.
+	private String hashPassword(String in) {
+		try {
+			MessageDigest md = MessageDigest.getInstance("SHA-256");
+			md.update(SALT.getBytes()); // <-- Prepend SALT.
+			md.update(in.getBytes());
+			// md.update(SALT.getBytes()); // <-- Or, append SALT.
+
+			byte[] out = md.digest();
+			return bytesToHex(out); // <-- Return the Hex Hash.
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		}
+		return "";
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+
+		// Session gets started.
+		HttpSession session = request.getSession(true);
+
+		// We will get 2 parameter from the request.
+		String email = request.getParameter("email");
+		String pass = hashPassword(request.getParameter("pass"));
+
+		// First it will check if the user is admin or not. Mysql query is written in AdminDao class.
+		// DbConnect.getCon() is passed as a parameter to AdminDao class to connect our back-end with database. 
+		AdminDao admindao = new AdminDao(DbConnect.getCon());
+		
+		// Admin class contains the details of the admin.
+		Admin admin = admindao.checkadmin(email, pass);
+		if (admin != null) {
+			// setMaxInactiveInterval sets the session timing for the user.
+			session.setMaxInactiveInterval(60 * 60);
+			// after 60 mins the session gets expired automatically.
+
+			// To pass attribute from one page to another we use setAttribute method.
+			session.setAttribute("admin", admin);
+
+			// We are sending our response to admin panel using sendRedirect method.
+			response.sendRedirect("./admin/admin.jsp");
+		} else {
+			// If credentials does not match with admin credentials then it will check for the customer.
+			
+			// UserDao class contains the query to check if user credentials are right or wrong.
+			// DbConnect.getCon() is passed as a parameter to UserDao class to connect our back-end with database. 
+			UserDao userdao = new UserDao(DbConnect.getCon());
+			
+			// User class contains the details of the user. checkDetail(email, pass) returns the instance of the user.
+			User user = userdao.checkDetail(email, pass);
+			
+			// if we get the customer than it will login or it will show an error in login page.
+			if (user != null) {
+				
+				// setMaxInactiveInterval sets the session timing for the user.
+				session.setMaxInactiveInterval(60 * 60);
+				// after 60 mins the session gets expired automatically.
+				
+				// To pass attribute from one page to another we use setAttribute method.
+				session.setAttribute("user", user);
+				
+				// redirect to index.jsp.
+				response.sendRedirect("index.jsp");
+			} else {
+				
+				// If no user and admin found then error message.
+				session.setAttribute("error", "Please login with right credentials...");
+				
+				// redirect to login.jsp
+				response.sendRedirect("login.jsp");
+			}
+		}
+	}
+
+}

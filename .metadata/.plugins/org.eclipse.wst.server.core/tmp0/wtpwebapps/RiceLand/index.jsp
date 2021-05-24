@@ -22,7 +22,7 @@
 						class="fas fa-arrow-right"></i></a>
 				</div>
 				<div>
-					<img class="img-fluid" src="./assets/images/rice/mainn.jpg">
+					<img class="img-fluid" src="./assets/images/rice/mainn-rice.jpg">
 
 				</div>
 			</div>

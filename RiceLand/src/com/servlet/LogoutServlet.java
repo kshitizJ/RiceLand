@@ -24,14 +24,26 @@ public class LogoutServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		try {
 
+			// sets the session false so that no further changes to the session is done.
 			HttpSession session = request.getSession(false);
+
+			// removes the user from the session.
 			session.removeAttribute("user");
+
+			// setMaxInactiveInterval sets the session timing for the user. It sets the
+			// session as 0 mins after clicking on logout.
 			session.setMaxInactiveInterval(0);
+
+			// invalidate() invalidates the session or destroys the session.
 			session.invalidate();
+
+			// Then we are redirected to the login page.
 			response.sendRedirect("login.jsp");
 
 		} catch (Exception e) {
 			// TODO: handle exception
+
+			// if some error occurs then it gets printed in the console.
 			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}

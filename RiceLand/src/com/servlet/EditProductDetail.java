@@ -38,12 +38,8 @@ public class EditProductDetail extends HttpServlet {
 		if (flag) {
 			if (status == "pending") {
 				CartDao cartDao = new CartDao(DbConnect.getCon());
-				boolean flag2 = cartDao.deleteProductFromCartForAll(id);
-				if (flag2) {
-
-				}
+				cartDao.deleteProductFromCartForAll(id);
 			}
-
 			session.setAttribute("msg", "Successfully edited the product...");
 			response.sendRedirect("admin/showProduct.jsp");
 		} else {

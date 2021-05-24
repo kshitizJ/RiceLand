@@ -1,4 +1,4 @@
 browser-choice=1
 browsers=<?xml version\="1.0" encoding\="UTF-8"?>\n<web-browsers current\="2">\n<system/>\n<external location\="/usr/bin/firefox" name\="Firefox"/>\n<external location\="/usr/bin/google-chrome" name\="Chrome"/>\n</web-browsers>
 eclipse.preferences.version=1
-internalWebBrowserHistory=http\://localhost\:8080/RiceLand/login.jsp|*|
+internalWebBrowserHistory=file\:///home/kshitiz_j/Kshitiz/java/jsp/RiceLand/RiceLand/WebContent/assets/images/menu.jpeg|*|file\:/home/kshitiz_j/Kshitiz/java/jsp/RiceLand/RiceLand/WebContent/assets/images/menu.jpeg|*|http\://localhost\:8080/RiceLand/login.jsp|*|
